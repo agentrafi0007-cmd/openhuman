@@ -1,0 +1,21 @@
+# OpenHuman configuration with Kilo Code as the AI provider.
+# API keys are stored separately in auth-profiles.json (not in this file).
+
+schema_version = 1
+
+[[cloud_providers]]
+id = "p_kilocode_a1b2c"
+slug = "kilocode"
+label = "Kilo Code"
+endpoint = "https://api.kilo.ai/api/gateway"
+auth_style = "bearer"
+
+# Use Kilo Code as the default inference provider.
+primary_cloud = "p_kilocode_a1b2c"
+
+# Local AI (Ollama/LM Studio/etc.) — disabled by default, use Kilo Code instead.
+[local_ai]
+provider = "none"
+
+[agent]
+default_model = "kilocode:gpt-5"
